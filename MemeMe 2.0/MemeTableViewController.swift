@@ -26,7 +26,7 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
         // Set the name and image
         cell.textLabel?.text = meme.topText
         cell.imageView?.image = meme.memedImage
-    
+        
         return cell
     }
     
