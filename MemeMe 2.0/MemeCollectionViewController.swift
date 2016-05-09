@@ -6,4 +6,12 @@
 //  Copyright © 2016 Phillip Crawford. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class MemeCollectionViewController: UIViewController {
+    
+    var memes: [Meme] {
+        return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
+    }
+    
+}
