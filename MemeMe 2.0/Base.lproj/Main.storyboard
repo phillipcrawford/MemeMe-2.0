@@ -57,7 +57,7 @@
         <!--Sent Memes-->
         <scene sceneID="SAX-Eb-BHO">
             <objects>
-                <viewController id="gXW-l6-TrS" customClass="MemeTableViewController" customModule="MemeMe_2_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="gXW-l6-TrS" customClass="MemeTableViewController" customModule="MemeMe_2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="owL-ew-eQd"/>
                         <viewControllerLayoutGuide type="bottom" id="bi6-bI-7d9"/>
@@ -70,24 +70,17 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MemeCell" textLabel="wzg-bv-El6" detailTextLabel="QHS-K5-5hv" style="IBUITableViewCellStyleSubtitle" id="R4q-XL-7EX">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MemeCell" textLabel="91x-uL-HEk" style="IBUITableViewCellStyleDefault" id="oCN-a9-vla">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R4q-XL-7EX" id="qxw-9R-SoS">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oCN-a9-vla" id="QtC-gq-hKJ">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wzg-bv-El6">
-                                                    <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="91x-uL-HEk">
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QHS-K5-5hv">
-                                                    <rect key="frame" x="15" y="25" width="41" height="14"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -95,6 +88,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="gXW-l6-TrS" id="NWr-Z9-UJu"/>
+                                    <outlet property="delegate" destination="gXW-l6-TrS" id="63J-a2-RQ1"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -105,7 +102,16 @@
                             <constraint firstItem="FT7-y5-2J2" firstAttribute="top" secondItem="owL-ew-eQd" secondAttribute="bottom" id="tak-99-Fqk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Sent Memes" id="nE1-SK-Ca2"/>
+                    <navigationItem key="navigationItem" title="Sent Memes" id="nE1-SK-Ca2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="DBO-GG-an4">
+                            <connections>
+                                <segue destination="ri2-uV-RfQ" kind="showDetail" id="IFc-ib-GSn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="MemeTableView" destination="FT7-y5-2J2" id="8Dz-Vt-y61"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="asL-ga-qUA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -213,6 +219,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wnh-9B-6XU" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1175" y="382"/>
+        </scene>
+        <!--Meme Detail View Controller-->
+        <scene sceneID="Uec-uU-VbH">
+            <objects>
+                <viewController id="Hng-Ev-TEp" customClass="MemeDetailViewController" customModule="MemeMe_2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d2H-EE-M5X"/>
+                        <viewControllerLayoutGuide type="bottom" id="ksY-ah-IK0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ef6-pM-jtY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ryH-Jx-XxM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1180" y="1068"/>
         </scene>
     </scenes>
 </document>

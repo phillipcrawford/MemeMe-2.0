@@ -6,4 +6,10 @@
 //  Copyright © 2016 Phillip Crawford. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class MemeDetailViewController: UIViewController {
+    
+    var meme: Meme!
+    
+}

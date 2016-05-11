@@ -10,6 +10,17 @@ import UIKit
 
 class MemeTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet var MemeTableView: UITableView!
+    
+    override func viewDidLoad(){
+        super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        MemeTableView?.reloadData()
+    }
+    
     var memes: [Meme] {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
     }
@@ -26,8 +37,18 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
         // Set the name and image
         cell.textLabel?.text = meme.topText
         cell.imageView?.image = meme.memedImage
+        cell.imageView?.contentMode = UIViewContentMode.ScaleAspectFill
+        cell.backgroundView = UIImageView(image: meme.memedImage)
         
         return cell
     }
-    
+
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
+        detailController.meme = memes[indexPath.row]
+        self.navigationController!.pushViewController(detailController, animated: true)
+        
+    }
+
 }
