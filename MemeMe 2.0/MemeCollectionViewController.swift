@@ -8,10 +8,14 @@
 
 import UIKit
 
-class MemeCollectionViewController: UIViewController {
+class MemeCollectionViewController: UICollectionViewController {
     
     var memes: [Meme] {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
+    }
+    
+    override func viewDidLoad(){
+        super.viewDidLoad()
     }
     
 }
