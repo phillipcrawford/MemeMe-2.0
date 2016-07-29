@@ -162,6 +162,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         appDelegate.memes.append(meme)
         
     }
+    
     @IBAction func activityViewController(sender: AnyObject) {
         let memedImage = generateMemedImage()
         let shareController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
@@ -173,12 +174,5 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
             }
         }
     }
-    @IBAction func reloadPage(sender: AnyObject) {
-        topTextField.text = "TOP"
-        bottomTextField.text = "BOTTOM"
-        imagePickerView.image = nil
-        shareButton.enabled = false
-    }
-    
 }
 

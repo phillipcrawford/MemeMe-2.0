@@ -35,10 +35,10 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
         let meme = memes[indexPath.row]
         
         // Set the name and image
-        cell.textLabel?.text = meme.topText
+        cell.textLabel?.text = "\(meme.topText) .. \(meme.bottomText)"
         cell.imageView?.image = meme.memedImage
         cell.imageView?.contentMode = UIViewContentMode.ScaleAspectFill
-        cell.backgroundView = UIImageView(image: meme.memedImage)
+        //cell.backgroundView = UIImageView(image: meme.memedImage)
         
         return cell
     }

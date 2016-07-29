@@ -11,12 +11,12 @@ import UIKit
 class MemeDetailViewController: UIViewController {
     
     @IBOutlet var memeImageView: UIImageView!
-    @IBOutlet var memeLabel: UILabel!
     var meme: Meme!
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         memeImageView.image = meme.memedImage
+        memeImageView.contentMode = .ScaleAspectFit
         tabBarController?.tabBar.hidden = true
         navigationController?.setToolbarHidden(true, animated: true)
         
