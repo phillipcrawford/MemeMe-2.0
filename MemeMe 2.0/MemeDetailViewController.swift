@@ -18,14 +18,12 @@ class MemeDetailViewController: UIViewController {
         memeImageView.image = meme.memedImage
         memeImageView.contentMode = .ScaleAspectFit
         tabBarController?.tabBar.hidden = true
-        navigationController?.setToolbarHidden(true, animated: true)
         
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         tabBarController?.tabBar.hidden = false
-        navigationController?.setToolbarHidden(false, animated: false)
     }
     
     

@@ -193,7 +193,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Cancel" id="ZXi-2e-pIC">
                                             <connections>
-                                                <segue destination="qgv-av-oBo" kind="showDetail" id="Xh3-Ps-JGR"/>
+                                                <action selector="cancel:" destination="ri2-uV-RfQ" id="X5x-Ic-RZ0"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>

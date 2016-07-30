@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MemeEditorViewController.swift
 //  MemeMe 1.0
 //
 //  Created by Phillip Crawford on 4/22/16.
@@ -173,6 +173,10 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
                 self.dismissViewControllerAnimated(true, completion: nil)
             }
         }
+    }
+    
+    @IBAction func cancel(sender: AnyObject){
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }
 

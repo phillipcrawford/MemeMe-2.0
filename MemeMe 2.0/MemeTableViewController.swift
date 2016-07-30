@@ -12,10 +12,6 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
     
     @IBOutlet var MemeTableView: UITableView!
     
-    override func viewDidLoad(){
-        super.viewDidLoad()
-    }
-    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         MemeTableView?.reloadData()
@@ -38,7 +34,6 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
         cell.textLabel?.text = "\(meme.topText) .. \(meme.bottomText)"
         cell.imageView?.image = meme.memedImage
         cell.imageView?.contentMode = UIViewContentMode.ScaleAspectFill
-        //cell.backgroundView = UIImageView(image: meme.memedImage)
         
         return cell
     }
